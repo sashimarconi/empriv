@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+seucreditoimediato.com	TRUE	/	FALSE	1999999999	__cf_bm	kCaQlPuj_A_Oi2DO8LJkACAlTUcRmgv66HPnzLztDSI-1773699441.320159-1.0.1.1-n0o2FlnFSRKkWJ4x4Vymy6RIzkuVzFYea34CeYetqrOfxRrP6Pzi53zeEYPbICVQkVxRh9K8P6hy9Y3Wsut3UBBCWfNQvPnJenL3RlENt1EevQeUqJ9cCW.Q3vUJnRNY
+
