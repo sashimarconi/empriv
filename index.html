@@ -44,6 +44,38 @@
 		<meta name="twitter:title" content="Sicoob">
 		<meta property="og:description" content="Sicoob - Empréstimo pessoal com as melhores condições">
 		<meta name="twitter:description" content="Sicoob - Empréstimo pessoal com as melhores condições">
+		<script>
+			(function(){
+				const prefix = '/seucreditoimediato.com';
+				const origSetAttr = Element.prototype.setAttribute;
+				Element.prototype.setAttribute = function(name, value){
+					if(name === 'src' && typeof value === 'string' && value.startsWith('/assets/')){
+						value = prefix + value;
+					}
+					return origSetAttr.call(this, name, value);
+				};
+				const imgProto = HTMLImageElement && HTMLImageElement.prototype;
+				if(imgProto){
+					const desc = Object.getOwnPropertyDescriptor(imgProto, 'src');
+					if(desc && desc.set){
+						Object.defineProperty(imgProto, 'src', {
+							set: function(v){ if(typeof v === 'string' && v.startsWith('/assets/')) v = prefix + v; return desc.set.call(this, v); },
+							get: desc.get
+						});
+					}
+				}
+				const mediaProto = HTMLMediaElement && HTMLMediaElement.prototype;
+				if(mediaProto){
+					const desc2 = Object.getOwnPropertyDescriptor(mediaProto, 'src');
+					if(desc2 && desc2.set){
+						Object.defineProperty(mediaProto, 'src', {
+							set: function(v){ if(typeof v === 'string' && v.startsWith('/assets/')) v = prefix + v; return desc2.set.call(this, v); },
+							get: desc2.get
+						});
+					}
+				}
+			})();
+		</script>
 		<script type="module" crossorigin src="/seucreditoimediato.com/assets/index-BJe8WceK.js"></script>
 		<link rel="stylesheet" crossorigin href="/seucreditoimediato.com/assets/index-GxuQn62h.css">
 		<script defer src="/seucreditoimediato.com/_flock.js" data-proxy-url="https://seucreditoimediato.com/~api/analytics"></script>
